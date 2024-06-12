@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+    <meta charset="UTF-8">
+    <title>Lunch Checker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" ng-controller="LunchCheckController">
+    <h1>Lunch Checker</h1>
+    <div class="form-group">
+        <label for="lunchInput">Enter comma-separated items you usually eat for lunch:</label>
+        <input type="text" class="form-control" id="lunchInput" ng-model="lunchItems">
+    </div>
+    <button class="btn btn-primary" ng-click="checkLunch()">Check If Too Much</button>
+    <p ng-if="message" ng-class="{'text-success': message === 'Enjoy!', 'text-danger': message === 'Too much!'}">{{ message }}</p>
+</div>
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
